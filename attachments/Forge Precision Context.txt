@@ -1,0 +1,226 @@
+#Forge Precision — Business Context Document
+### Share this file with any LLM to give it complete context about the business
+
+---
+
+## IDENTITY
+
+**Company name:** Forge Precision
+**Tagline:** "We find the cash your receivables are hiding."
+**Alternative tagline:** "AI answers questions. We ask the right questions."
+**Founder:** Shwetank
+**Structure:** Solo consultancy (sole proprietorship initially, scaling to 2–3 people at ₹5L+ monthly revenue)
+**Location:** Delhi, India (serving clients across India, with potential for global mid-market clients)
+**Founded:** 2026
+**Website:** [forgeprecision.in or chosen domain]
+**Contact email:** shwetank@[domain]
+
+---
+
+## WHAT WE DO
+
+Forge Precision is a **B2B receivables and order-to-cash (O2C) consultancy** that helps mid-market companies find and free cash trapped in overdue receivables.
+
+We are NOT a debt collection agency. We are NOT a software company. We are a specialized advisory and managed-service firm that:
+
+1. **Diagnoses** — Maps the full invoice-to-cash process, segments the AR aging by root cause, and quantifies exactly how much cash is stuck and why
+2. **Fixes** — Redesigns dunning workflows, escalation paths, credit terms, dispute resolution, and collections prioritization
+3. **Automates** — Deploys AI-powered dunning sequences, cash-application helpers, aging dashboards, and collections prioritization models
+4. **Manages** — Optionally runs the optimized collections process on a monthly retainer, acting as an outsourced AR intelligence layer
+
+**The core value proposition:** Mid-market companies typically carry 15–25 extra days of DSO (Days Sales Outstanding) from process gaps, not bad customers. Forge Precision identifies those gaps, quantifies them in rupees, and closes them — freeing working capital without changing the customer base or revenue.
+
+---
+
+## WHO WE SERVE
+
+**Ideal Client Profile (ICP):**
+- **Company size:** ₹50 Crore – ₹500 Crore annual revenue
+- **Model:** B2B (invoice-based receivables, not B2C/retail)
+- **Sectors:** Manufacturing, B2B services, IT staffing, logistics, distribution, industrial supplies, B2B SaaS
+- **Geography:** India-headquartered (primary), with potential for global mid-market firms
+- **Pain signals:** High DSO, growing AR aging, hiring collections staff, bad debt write-offs, cash flow unpredictability, manual/fragmented collections process
+
+**Who we do NOT serve:**
+- Enterprise / Fortune 500 (served by EXL, Genpact, Accenture)
+- B2C / consumer debt collection (regulated under RBI recovery agent framework)
+- Micro/small businesses under ₹50Cr revenue (too small to justify our fees)
+
+**Buyer persona:**
+- **Title:** CFO, Finance Controller, VP Finance, Head of O2C, or Founder/CEO at smaller firms
+- **What they care about:** Cash flow predictability, freeing trapped working capital, not hiring more headcount for collections, reducing bad debt write-offs, looking competent to board/investors
+
+---
+
+## HOW WE MAKE MONEY
+
+### Revenue model (two tiers)
+
+**Tier 1 — Diagnostic (entry product)**
+- Fixed-fee engagement: ₹50,000 – ₹2,00,000 (based on company size)
+- Duration: 2 weeks
+- Deliverable: Comprehensive O2C diagnostic report including process map, aging analysis, DSO decomposition, root-cause segmentation, benchmarking, quick wins, and implementation roadmap
+- Purpose: Low-risk entry point that proves value and converts to retainer
+
+**Tier 2 — Retainer (core revenue)**
+- Monthly retainer: ₹1,50,000 – ₹3,00,000 per month
+- Typical engagement: 3–6 months (often extending to ongoing)
+- Scope: Implementation of diagnostic recommendations — dunning process redesign, automation deployment, collections team coaching, weekly AR review cadence, dispute resolution process, credit terms review, management reporting
+- Optional performance kicker: % of cash accelerated beyond baseline
+
+### Revenue targets
+- Phase 1 (Months 1–6): ₹0 – ₹3L/month (1–2 clients, diagnostics + first retainer)
+- Phase 2 (Months 6–18): ₹3L – ₹8L/month (3–5 retainer clients)
+- Phase 3 (Year 2–3): ₹10L – ₹18L/month (5–8 retainer clients, potential team of 2–3)
+- Long-term take-home target: ₹10–11L/month
+
+---
+
+## COMPETITIVE POSITIONING
+
+### Where Forge Precision sits in the market
+
+**Enterprise BPO/Advisory (EXL, Genpact, Accenture, Cognizant):** These firms chase Fortune 500 accounts with large teams and high minimums. They will not serve a ₹200Cr Indian manufacturer. Forge Precision operates in the gap they leave behind.
+
+**Software vendors (HighRadius, Billtrust, Tesorio, Paraglide):** These sell AR automation platforms. They are tools, not operators. Most mid-market companies buy the software and use 30% of it because they lack the process expertise to implement it properly. Forge Precision makes these tools deliver ROI — we're implementation partners, not competitors.
+
+**India-based AR outsourcing (Invensis, smaller BPOs):** These provide headcount — bodies to make collections calls. Forge Precision provides strategy, diagnosis, and AI-augmented operations. Different value proposition entirely.
+
+**Solo CA firms / freelance consultants:** Generalists who occasionally touch AR as part of broader financial advisory. Forge Precision is the specialist — depth over breadth.
+
+**Forge Precision's wedge:** The person who understands O2C process AND automation, serving mid-market companies the giants ignore, deploying tools the software vendors sell but don't operationalize.
+
+---
+
+## THE FOUNDER
+
+**Background:** Shwetank has spent 1+ year deep in order-to-cash operations at Cvent (a major B2B SaaS/events technology company), working in accounts receivable within the AI and Technology division. His work spans:
+
+- Operational AR portfolio management across multiple account managers and large receivables portfolios
+- Building AI-powered automation systems (ARGUS — a multi-agent PO follow-up system)
+- Token optimization research (CLEVER 3.0 framework) for enterprise AI deployments
+- Regular AR aging analysis, DSO tracking, 100+ days-past-due extraction, and account manager attribution
+
+**Technical capabilities:**
+- Can code (Python, automation workflows, data analysis)
+- Can build websites
+- Can create content (LinkedIn, thought leadership)
+- Comfortable on sales calls in English
+- Deep familiarity with AI tools (Claude, agentic workflows, MCP integrations)
+
+**Relevant domain knowledge:**
+- AR aging analysis and segmentation
+- Dunning workflow design and optimization
+- Collections prioritization and escalation frameworks
+- Dispute resolution tracking
+- Cash application processes
+- DSO decomposition (Actual DSO, Best Possible DSO, Average Days Delinquent)
+- Credit terms review and optimization
+- ERP/accounting system AR modules (Tally, SAP, Oracle, Zoho, NetSuite)
+
+---
+
+## AI & AUTOMATION ADVANTAGE (THE "POLSIA MODEL")
+
+Forge Precision operates as a **one-person firm with AI as the back office.** Inspired by companies like Polsia (where one person runs an entire business using AI agents for 80% of operations), the founder uses AI to replace the team that would normally sit behind a consultant:
+
+| Function | AI handles | Founder handles |
+|---|---|---|
+| AR aging analysis | Claude + Python: automated ingestion, segmentation, visualization | Review, interpretation, strategic commentary |
+| DSO benchmarking | Automated benchmark lookup and comparison | Client-specific context and recommendations |
+| Dunning sequences | AI-generated, human-approved email templates | Strategy, escalation decisions, relationship management |
+| Client reports | Auto-generated weekly dashboards from data | Strategic narrative, action items, client communication |
+| Proposals & presentations | Claude drafts from discovery call notes | Customization, delivery, relationship |
+| Content marketing | Claude assists with drafts | Voice, perspective, publishing |
+| Collections prioritization | Scoring models auto-rank call lists | Exception handling, judgment calls |
+
+**Proprietary frameworks:**
+- **CLEVER 3.0:** Token optimization framework that allows running agentic AI workflows at significantly reduced cost — enabling deeper analysis per client at better margins
+- **ARGUS architecture:** Multi-agent system design experience applicable to building automated collections workflows for clients
+
+---
+
+## BRAND VOICE & COMMUNICATION STYLE
+
+**Tone:** Direct, confident, no-nonsense. Speaks in rupees and days, not jargon. Uses the CFO's language (cash flow, working capital, DSO, bad debt) rather than consultant-speak (optimization, synergy, transformation).
+
+**Core messaging principles:**
+1. Lead with the number, not the methodology — "₹4 crore is stuck" beats "we optimize your O2C process"
+2. The client's problem is always stated in their language, never ours
+3. Specificity over generality — "28% of your overdue traces to wrong billing contacts" beats "we improve collections efficiency"
+4. Honesty over polish — if we can't help, we say so; if the timeline is aggressive, we say so
+5. Results are quantified or not mentioned — no unearned claims
+
+**Key phrases / positioning lines:**
+- "We find the cash your receivables are hiding."
+- "AI answers questions. We ask the right questions."
+- "You have ₹[X] crore stuck beyond terms. We get it back."
+- "The expensive part isn't the tool. It's knowing what to look for."
+- "We help mid-market finance teams free trapped working capital — without changing your customer base."
+
+**Phrases we NEVER use:**
+- "Synergy," "leverage" (as a verb), "paradigm shift," "holistic solution"
+- "World-class," "best-in-class," "cutting-edge" (unearned superlatives)
+- "We are passionate about..." (nobody cares about our passion; they care about their cash)
+- "Debt collection" (we are advisory, not collectors)
+
+---
+
+## CONTENT STRATEGY
+
+**Platform:** LinkedIn (primary), website blog (secondary)
+**Cadence:** 3 posts per week on LinkedIn
+**Content pillars:**
+1. O2C process insights — specific, non-obvious observations from the trenches
+2. DSO / receivables benchmarks and data — quantified, sector-specific
+3. AI in finance operations — how automation is changing collections
+4. Common mistakes — "why hiring more collectors won't fix your DSO"
+5. Mini case studies — anonymized results from client engagements
+
+---
+
+## SALES PROCESS
+
+1. **LinkedIn outreach** — 5-touch sequence (connection → insight message → value drop → direct ask → graceful exit)
+2. **Discovery call** — 80% listening, diagnose the pain, quantify in rupees
+3. **Diagnostic proposal** — small, fixed-fee, low-risk entry point
+4. **Diagnostic delivery** — 2-week engagement producing the O2C diagnostic report
+5. **Retainer conversion** — presentation of findings leads to implementation engagement
+6. **Ongoing retainer** — monthly managed service with reporting and continuous optimization
+
+**Referral partners:** Chartered Accountants, fractional CFOs, ERP implementers, accounting outsourcing firms
+
+---
+
+## OPERATIONAL DETAILS
+
+**Legal structure:** Sole proprietorship (initially), upgrading to LLP or Pvt Ltd at ₹10–15L/month revenue
+**GST:** Registration when approaching ₹20L annual revenue threshold
+**Invoicing:** Zoho Invoice (free plan)
+**Payments:** Direct bank transfer + UPI (primary), Razorpay for card payments
+**CRM:** Notion database
+**Scheduling:** Calendly (free plan)
+**Email:** Zoho Mail (free) on custom domain
+**Website:** Single-page site on Cloudflare Pages or Netlify (free hosting)
+
+---
+
+## INSTRUCTIONS FOR ANY LLM USING THIS DOCUMENT
+
+When helping Forge Precision with any task, keep these principles in mind:
+
+1. **Always speak in the client's language.** CFOs think in rupees, DSO days, working capital, and headcount — not in process frameworks or consulting jargon.
+
+2. **Quantify everything.** Every claim, recommendation, or insight should be tied to a number (₹ freed, days reduced, % improvement). Vague value statements are worthless.
+
+3. **Be direct and honest.** Forge Precision's brand is built on no-nonsense expertise. Never pad, inflate, or use filler. If something won't work, say so.
+
+4. **Remember the solo operator model.** Recommendations should be executable by one person with AI assistance. Don't suggest things that require a team of 10.
+
+5. **The diagnostic is the entry product.** All sales conversations should lead toward the diagnostic. The retainer sells itself after the diagnostic proves value.
+
+6. **Competitive positioning is "the specialist the giants ignore."** We don't compete with EXL or HighRadius. We serve the companies they don't.
+
+7. **India mid-market is the primary market.** Language, pricing, examples, and cultural references should default to Indian business context unless specified otherwise.
+
+8. **Protect the brand.** Never generate content that sounds generic, template-y, or like "LinkedIn influencer" content. Every piece should demonstrate specific, insider knowledge of O2C/receivables.

@@ -1,0 +1,333 @@
+Cashlyn Ledger — Developer Specification
+
+For Grok Build / implementation agent
+
+Version: 2.0
+Date: 2026-10-25
+Depends on: Cashlyn_Ledger_Diagnostic_Engine_System_Design.md (v2.0)
+Master report: Cashlyn_O2C_Diagnostic_Report_Master_Template.md
+
+This is the implementation contract. Follow it. Do not add features outside the listed scope.
+
+
+
+Locked requirements
+
+
+
+
+
+Input: Zoho CSV/Excel and Tally Excel.
+
+
+
+Output: JSON payload + view-only rendered report (graphs). No download button. No raw Storage URL issued to the client.
+
+
+
+Platform: Appwrite (Database, Storage, Functions, Auth).
+
+
+
+Client config (standard_terms_days + top_account list) is mandatory before any run.
+
+
+
+Multi-currency (normalize to INR) and multi-GSTIN / multi-branch are in the first schema.
+
+
+
+Brand tokens for all rendered pages: Void Black #080808, Warm Paper #F3F0E8, Muted Stone #9A958B, Cash Gold #E4B04A.
+
+
+
+Scope
+
+Build Appwrite Functions and the supporting Python package that:
+
+
+
+
+
+Accept an authenticated upload of a Zoho or Tally export.
+
+
+
+Validate client_config exists.
+
+
+
+Ingest, normalize (including FX and entity resolution), and store in Appwrite Database.
+
+
+
+Run ruleset v1 and write classifications + audit log.
+
+
+
+Emit a JSON payload matching the schema below.
+
+
+
+Render page images or a protected HTML view with charts.
+
+
+
+Serve the report only through an authenticated viewer function. Never return a direct download link.
+
+Do not build:
+
+
+
+
+
+Live ERP write-back
+
+
+
+Outreach or WhatsApp
+
+
+
+Multi-agent systems
+
+
+
+A public unauthenticated endpoint
+
+
+
+Any claim of perfect DRM
+
+
+
+Appwrite resources to create
+
+
+
+
+
+Database: ledger
+
+
+
+Collections: clients, client_config, entities, customers, invoices, diagnostic_runs, invoice_classifications, audit_log, report_pages
+
+
+
+Storage buckets (private): exports, reports
+
+
+
+Functions: ledger-ingest, ledger-classify, ledger-render, ledger-viewer
+
+
+
+Auth: email/password for founder; later invite-only for client viewers
+
+
+
+JSON payload schema (must match exactly)
+
+{
+  "run_id": "string",
+  "client": {
+    "name": "string",
+    "erp_type": "zoho|tally",
+    "standard_terms_days": 45,
+    "base_currency": "INR"
+  },
+  "as_of": "YYYY-MM-DD",
+  "fx_rates_snapshot": { "USD": 83.5, "EUR": 90.1 },
+  "headline": {
+    "trapped_cash_inr_cr": 4.2,
+    "pct_of_ar": 0.31,
+    "days_of_wc": 22
+  },
+  "by_cause": {
+    "process": { "amount_inr_cr": 1.8, "pct": 0.43 },
+    "power": { "amount_inr_cr": 1.9, "pct": 0.45 },
+    "terms": { "amount_inr_cr": 0.5, "pct": 0.12 },
+    "distress": { "amount_inr_cr": 0.0, "pct": 0.0 },
+    "unknown": { "amount_inr_cr": 0.0, "pct": 0.0 }
+  },
+  "by_entity": [
+    { "gstin": "string", "branch": "string", "trapped_cash_inr_cr": 1.1 }
+  ],
+  "top_subcauses": [
+    { "subcause": "wrong_or_missing_contact", "amount_inr_cr": 0.7, "window_days": 30 }
+  ],
+  "cash_map_30_60_90": { "d30": 0.9, "d60": 1.4, "d90": 1.8 },
+  "quick_wins": ["string"],
+  "notes": ["conservative; power and terms excluded from recoverable"]
+}
+
+All monetary values in the payload are INR crore, 2 decimals. Raw amounts stay in the database.
+
+
+
+Column mapping
+
+Provide two mappers.
+
+Zoho Books (CSV/Excel)
+external_id ← Invoice ID or Invoice Number
+customer_external_id ← Customer ID
+customer_name ← Customer Name
+amount ← Balance or Amount
+currency ← Currency (default INR)
+invoice_date ← Invoice Date
+due_date ← Due Date
+status ← Status
+po_number ← Purchase Order
+gstin ← GSTIN or Tax Registration Number
+branch ← Branch or Location (optional)
+
+Tally Excel
+external_id ← Voucher Number or Invoice No
+customer_name ← Party Name
+amount ← Pending Amount or Closing Balance
+currency ← Currency (default INR)
+invoice_date ← Date
+due_date ← Due Date or Bill Date + credit days
+status ← derive from pending > 0
+gstin ← GSTIN
+branch ← Cost Centre or Godown (optional)
+
+Accept --mapping override JSON. Fail closed if required fields cannot be mapped.
+
+
+
+Ruleset v1
+
+Implement R001–R008 exactly as described in the system design.
+Top-account match (from client_config) forces cause = power and recoverable = 0 when the overdue condition is met.
+Multi-entity does not change rule logic; it only groups the output.
+
+
+
+Viewer contract
+
+
+
+
+
+Endpoint: Appwrite Function ledger-viewer
+
+
+
+Requires valid Appwrite session.
+
+
+
+Accepts run_id.
+
+
+
+Returns either:
+
+
+
+
+
+HTML that renders page images from private Storage via short-lived signed URLs generated inside the function (URLs expire in ≤ 60 seconds and are not logged to the client), or
+
+
+
+A sequence of PNG responses with Content-Disposition: inline and Cache-Control: no-store.
+
+
+
+Watermark every page: client name + run_id + ISO timestamp.
+
+
+
+Do not render a download control.
+
+
+
+Log every view to audit_log.
+
+
+
+Testing requirements
+
+
+
+
+
+Fixture Zoho CSV and fixture Tally Excel, each covering every rule and at least two currencies and two GSTINs.
+
+
+
+Test that missing client_config aborts the run.
+
+
+
+Test that a power-classified invoice has recoverable_amount_inr = 0.
+
+
+
+Test determinism: same inputs → identical payload.
+
+
+
+Test that the viewer function rejects unauthenticated requests.
+
+
+
+Coverage on rules and aggregate > 90%.
+
+
+
+Definition of done
+
+
+
+
+
+Appwrite collections and buckets can be created from the provided schema scripts or console instructions.
+
+
+
+Both Zoho and Tally fixtures produce a valid payload.
+
+
+
+Viewer serves an authenticated, watermarked, non-download-linked report with at least three charts (cause split, 30/60/90, entity).
+
+
+
+All tests pass.
+
+
+
+README contains the exact Appwrite CLI commands to deploy the four functions.
+
+
+
+No secrets in the repository.
+
+
+
+Out of scope
+
+
+
+
+
+PDF file that the client can save.
+
+
+
+Perfect screenshot prevention.
+
+
+
+Tally XML (Excel only for v1).
+
+
+
+Any outreach feature.
+
+Ship the engine and the controlled viewer. The founder still writes the narrative. Ledger supplies the numbers and the view.

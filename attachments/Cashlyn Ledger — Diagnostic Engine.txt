@@ -1,0 +1,482 @@
+Cashlyn Ledger — Diagnostic Engine
+
+System Design & DevOps Specification
+
+Version: 2.0
+Date: 2026-10-25
+Owner: Shwetank Pandey / Cashlyn
+Purpose: Repeatable, auditable conversion of an open-AR export into the numbers, cause split, and view-only report that appear in the O2C Diagnostic.
+
+Ledger is the internal engine that turns a Zoho or Tally export into the Trapped Cash Number, the Process / Power / Terms split, and a view-only report. A human still does the interviews and the judgment. Ledger does the arithmetic, the classification, the audit trail, and the controlled rendering.
+
+
+
+1. Locked decisions (founder, 2026-10-25)
+
+
+
+
+
+Input: Zoho CSV/Excel and Tally Excel on day one.
+
+
+
+Output: JSON payload plus a view-only report (graphs + rendered pages). Direct download and casual screenshot are blocked by design. See section 7 for the honest limit.
+
+
+
+Hosting: Appwrite (Database + Storage + Functions + Auth).
+
+
+
+Client config is required before any run: standard terms days and top-account exclusion list.
+
+
+
+Multi-currency and multi-GSTIN / multi-branch are in the first schema.
+
+
+
+2. Goals and non-goals
+
+Goals
+
+
+
+
+
+Accept Zoho Books or Tally open-invoice exports.
+
+
+
+Normalize into Appwrite Database collections (client-scoped).
+
+
+
+Require client config (terms + top-account list) before classification.
+
+
+
+Compute Trapped Cash Number, cause split, Best Possible DSO gap, ranked process-fixable cash, and 30/60/90 map.
+
+
+
+Emit a versioned JSON payload.
+
+
+
+Render a view-only report with graphs. Serve it through a controlled viewer. No direct file download link is exposed to the client.
+
+
+
+Keep every calculation deterministic, versioned, and re-runnable.
+
+
+
+Produce an audit log of every rule that fired.
+
+Non-goals
+
+
+
+
+
+No live write-back to Zoho or Tally.
+
+
+
+No multi-agent orchestration.
+
+
+
+No autonomous outreach.
+
+
+
+No ML in v1. Rules only.
+
+
+
+No public unauthenticated API.
+
+
+
+3. High-level architecture (Appwrite)
+
+[Export upload] → [Appwrite Function: ingest]
+                         ↓
+                  [Appwrite Database]
+                         ↓
+                  [Appwrite Function: rules + aggregate]
+                         ↓
+                  [JSON payload in Storage]
+                         ↓
+                  [Appwrite Function: render]
+                         ↓
+                  [View-only viewer endpoint]
+                         ↑
+                  [Appwrite Auth session]
+
+
+
+
+
+All compute runs as Appwrite Functions (Python runtime).
+
+
+
+Appwrite Database is the system of record.
+
+
+
+Storage holds the original export (private bucket) and the rendered report pages (private bucket).
+
+
+
+The client never receives a raw Storage URL. They receive a short-lived, authenticated viewer session that streams page images or a protected HTML view.
+
+
+
+Secrets live in Appwrite environment variables. Never in the repo.
+
+
+
+4. Data model (Appwrite Collections)
+
+Collections replace the earlier Postgres tables. Relationships via document IDs.
+
+clients
+
+
+
+
+
+id, name, erp_type (zoho | tally), base_currency, created_at
+
+client_config (required before run)
+
+
+
+
+
+client_id
+
+
+
+standard_terms_days (int, required)
+
+
+
+top_account_external_ids (array of strings, required; can be empty)
+
+
+
+multi_entity (bool)
+
+
+
+notes
+
+entities (multi-GSTIN / multi-branch)
+
+
+
+
+
+client_id, gstin, branch_name, currency, is_primary
+
+customers
+
+
+
+
+
+client_id, external_id, name, segment, top_account_flag, payment_behavior_score
+
+invoices
+
+
+
+
+
+client_id, entity_id (nullable), external_id, customer_id
+
+
+
+amount, currency, amount_inr (normalized)
+
+
+
+invoice_date, due_date, status, age_days
+
+
+
+dispute_flag, po_number, gstin
+
+
+
+last_action_at, raw (JSON)
+
+diagnostic_runs
+
+
+
+
+
+client_id, started_at, finished_at, ruleset_version, input_file_hash, status, fx_rates_snapshot (JSON)
+
+invoice_classifications
+
+
+
+
+
+run_id, invoice_id, cause, subcause, confidence, recoverable_amount_inr, rule_ids
+
+audit_log
+
+
+
+
+
+run_id, invoice_id, rule_id, message, created_at
+
+report_pages
+
+
+
+
+
+run_id, page_number, storage_file_id, content_hash
+
+Indexes via Appwrite query indexes on client_id, run_id, cause.
+
+
+
+5. Ingest pipeline
+
+
+
+
+
+Authenticated upload of CSV or Excel to a private Appwrite Storage bucket.
+
+
+
+Function validates headers against ERP-specific mapper (Zoho or Tally).
+
+
+
+Reject if required columns missing or if client_config is absent.
+
+
+
+SHA-256 the file. Store on the run.
+
+
+
+Normalize dates, amounts, GSTIN, PO, currency.
+
+
+
+Convert non-INR amounts to INR using the fx_rates_snapshot locked on the run (source: a simple rate table or manual override in config).
+
+
+
+Resolve entity by GSTIN or branch column. Create entity if new.
+
+
+
+Upsert customers and invoices.
+
+
+
+Create diagnostic_runs row with status running.
+
+Required logical fields: invoice external id, customer id or name, amount, currency, invoice date, due date, status. Optional: PO, GSTIN, branch, dispute flag.
+
+
+
+6. Rules engine
+
+Same taxonomy and ruleset v1 as prior version (R001–R008). Pure functions. Versioned. All recoverable amounts stored in INR.
+
+Power and terms classifications force recoverable_amount_inr = 0 for that invoice. Process classifications keep a conservative recoverable portion. Top-account flag (from client_config) forces power classification when the rule matches, regardless of other signals.
+
+Determinism: same file + same config + same ruleset_version + same fx snapshot = identical payload.
+
+
+
+7. Report payload and view-only rendering
+
+Payload schema (stable)
+
+See developer spec for the full JSON schema. Includes multi-entity breakdown and currency-normalized totals.
+
+View-only report
+
+The renderer produces:
+
+
+
+
+
+A sequence of page images (PNG) or a protected HTML view that draws charts server-side.
+
+
+
+Charts: aging waterfall by cause, 30/60/90 cash map, top subcauses bar, entity-level split.
+
+
+
+Brand tokens: Void Black #080808, Warm Paper #F3F0E8, Muted Stone #9A958B, Cash Gold #E4B04A.
+
+Controls (practical maximum)
+
+
+
+
+
+Report lives in a private Storage bucket. No public URL.
+
+
+
+Viewer is an Appwrite Function behind Auth. Session required.
+
+
+
+Response headers: Content-Disposition: inline, Cache-Control: no-store, X-Frame-Options: DENY, short expiry.
+
+
+
+Each page image is watermarked with client name + run id + timestamp.
+
+
+
+No “Download” button is rendered. Direct Storage links are never issued to the client.
+
+
+
+Right-click and drag are suppressed in the viewer HTML. This is cosmetic.
+
+Honest limit
+
+A determined user can still screenshot, photograph the screen, or use browser developer tools. There is no reliable way to make a web-delivered document non-screenshotable. The controls above raise the cost and leave an audit trail. They do not create DRM. Do not promise the client that the report cannot be copied. Promise that it is not casually downloadable and that every view is authenticated and logged.
+
+
+
+8. DevOps on Appwrite
+
+Environments
+
+
+
+
+
+local — Appwrite self-hosted or cloud project for development.
+
+
+
+prod — single Appwrite project. Founder-only access for the first clients.
+
+Functions
+
+
+
+
+
+ledger-ingest
+
+
+
+ledger-classify
+
+
+
+ledger-render
+
+
+
+ledger-viewer
+
+Each function is a Python package deployed via Appwrite CLI or Git.
+
+Observability
+
+
+
+
+
+Function logs in Appwrite console.
+
+
+
+Every run writes diagnostic_runs + audit_log.
+
+
+
+Failed runs leave status = failed and no partial classifications (transactional where Appwrite supports it; otherwise compensating delete).
+
+Security
+
+
+
+
+
+Appwrite Auth with email/password or magic link for founder and (later) client viewers.
+
+
+
+Storage buckets private.
+
+
+
+Database permissions: document-level security so a client can only read their own runs.
+
+
+
+No ERP write credentials stored.
+
+Backup
+
+
+
+
+
+Appwrite project backups per platform defaults. Export critical collections weekly for the first 90 days.
+
+
+
+9. Success criteria for v1
+
+
+
+
+
+Zoho and Tally sample exports both load and produce identical structure payloads.
+
+
+
+Missing client_config blocks the run.
+
+
+
+Multi-currency invoices normalize to INR and appear in the entity split.
+
+
+
+Viewer serves the report only to an authenticated session and does not expose a download URL.
+
+
+
+Re-running the same inputs produces the same payload.
+
+
+
+Audit log explains every classification.
+
+
+
+10. What remains human
+
+Pages 2–3 of the master diagnostic (process map from interviews) stay manual. Ledger supplies the numbers, the cause split, the charts, and the view-only container. The founder still writes the narrative and the recommendation.

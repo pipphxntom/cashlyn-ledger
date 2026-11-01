@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Cashlyn",
+      "hasCanvas": false,
+      "bodyTextLen": 1354,
+      "bodyTextHash": "8d5acd2f554881a559ba588e3251acbd11a6d2030bfe6a7feb970c827b455f59",
+      "bodyTextPrefix": "Cashlyn Read a book ORDER-TO-CASH FOR THE MID-MARKET See the cas",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Cashlyn",
+      "hasCanvas": false,
+      "bodyTextLen": 1354,
+      "bodyTextHash": "8d5acd2f554881a559ba588e3251acbd11a6d2030bfe6a7feb970c827b455f59",
+      "bodyTextPrefix": "Cashlyn Read a book ORDER-TO-CASH FOR THE MID-MARKET See the cas",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

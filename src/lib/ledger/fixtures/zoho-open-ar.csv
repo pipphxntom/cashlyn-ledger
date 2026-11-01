@@ -1,0 +1,15 @@
+Invoice ID,Customer ID,Customer Name,Balance,Currency,Invoice Date,Due Date,Status,Purchase Order,GSTIN,Branch,Dispute,Email,Last Follow Up
+POWER-1,CUST-POWER,Big Buyer Pvt Ltd,10000000,INR,2026-06-01,2026-07-16,Overdue,PO-100,07AABCU9603R1ZM,Delhi,No,ap@bigbuyer.example,2026-09-20
+DISP-1,CUST-A,Aarav Steels,5000000,INR,2026-07-01,2026-08-15,Overdue,PO-200,07AABCU9603R1ZM,Delhi,Yes,ap@aarav.example,2026-09-25
+PO-1,CUST-B,Bharat Components,4000000,INR,2026-07-15,2026-08-29,Overdue,,07AABCU9603R1ZM,Delhi,No,ap@bharat.example,2026-09-28
+CONT-1,CUST-C,Chandra Logistics,7000000,INR,2026-08-01,2026-09-15,Overdue,PO-400,07AABCU9603R1ZM,Delhi,No,,2026-09-20
+FOL-1,CUST-D,Delta Mills,2000000,INR,2026-08-10,2026-09-24,Overdue,PO-500,07AABCU9603R1ZM,Delhi,No,ap@delta.example,
+TERM-1,CUST-E,Eastern Alloys,5000000,INR,2026-06-01,2026-08-30,Overdue,PO-600,07AABCU9603R1ZM,Delhi,No,ap@eastern.example,2026-09-28
+DIST-1,CUST-F,Falcon Castings,3000000,INR,2026-01-01,2026-02-15,Overdue,PO-700,07AABCU9603R1ZM,Delhi,No,ap@falcon.example,2026-09-25
+CAD-1,CUST-G,Ganga Pumps,1000000,INR,2026-08-07,2026-09-21,Overdue,PO-800,07AABCU9603R1ZM,Delhi,No,ap@ganga.example,2026-09-20
+UNK-1,CUST-H,Himalaya Gears,2000000,INR,2026-06-08,2026-07-23,Overdue,PO-900,07AABCU9603R1ZM,Delhi,No,ap@himalaya.example,2026-09-20
+USD-1,CUST-US,Umbra Exports,10000,USD,2026-08-01,2026-09-15,Overdue,,27AABCU9603R1Z5,Mumbai,No,ap@umbra.example,2026-09-28
+EUR-1,CUST-EU,Euro Parts GmbH,1000,EUR,2026-09-20,2026-11-04,Sent,PO-1100,27AABCU9603R1Z5,Mumbai,No,ap@europarts.example,2026-09-20
+CUR-1,CUST-I,Indus Retail,1000000,INR,2026-09-20,2026-11-04,Sent,PO-1200,07AABCU9603R1ZM,Delhi,No,ap@indus.example,
+DRAFT-1,CUST-J,Draft Co,999999,INR,2026-09-01,2026-09-15,Draft,PO-1,07AABCU9603R1ZM,Delhi,No,ap@draft.example,2026-09-01
+ZERO-1,CUST-K,Settled Co,0,INR,2026-01-01,2026-02-01,Paid,PO-1,07AABCU9603R1ZM,Delhi,No,ap@settled.example,2026-02-01

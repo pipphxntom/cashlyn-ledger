@@ -1,0 +1,17 @@
+node_modules
+dist
+.output
+.nitro
+.tanstack
+.vercel
+.grok
+.env
+.env.*
+*.local
+.node_modules.lock
+.DS_Store
+
+# Real ledgers. The public sample is in public/.
+artifacts/
+attachments/*.xlsx
+attachments/*.csv

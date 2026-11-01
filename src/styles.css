@@ -1,0 +1,129 @@
+@import "@fontsource/geist/400.css";
+@import "@fontsource/geist/500.css";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+@import "@fontsource/geist-mono/400.css";
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #080808;
+  --color-ink-2: #0c0c0c;
+  --color-surface: #121212;
+  --color-cream: #f3f0e8;
+  --color-cream-dim: #c9c4b8;
+  --color-stone: #9a958b;
+  --color-gold: #e4b04a;
+  --color-gold-2: #f0c25c;
+  --color-line: rgba(243, 240, 232, 0.09);
+  --color-line-strong: rgba(243, 240, 232, 0.16);
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --radius-card: 1.375rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  label:has(input[type="file"]) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: rgba(228, 176, 74, 0.35);
+    color: var(--color-cream);
+  }
+}
+
+@utility eyebrow {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+@utility display {
+  letter-spacing: -0.038em;
+  font-size: max(2.6rem, min(7.2vw, 5.75rem));
+  font-weight: 500;
+  line-height: 0.96;
+}
+
+@utility display-md {
+  letter-spacing: -0.034em;
+  font-size: max(2.1rem, min(4.8vw, 4rem));
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+@utility lede {
+  color: var(--color-stone);
+  font-size: max(1.05rem, min(1.7vw, 1.25rem));
+  line-height: 1.55;
+}
+
+@utility card {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  background: var(--color-ink-2);
+}
+
+.grain {
+  pointer-events: none;
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.watermark {
+  background-image: repeating-linear-gradient(
+    -28deg,
+    transparent,
+    transparent 88px,
+    rgba(243, 240, 232, 0.035) 88px,
+    rgba(243, 240, 232, 0.035) 89px
+  );
+}
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+  .no-print,
+  .grain {
+    display: none !important;
+  }
+  #sheet {
+    color: #161616;
+  }
+  #sheet .text-cream,
+  #sheet .text-cream-dim {
+    color: #161616 !important;
+  }
+  #sheet .text-stone,
+  #sheet .text-gold {
+    color: #333 !important;
+  }
+  #sheet .card {
+    background: #fff !important;
+    border-color: #ddd !important;
+  }
+}

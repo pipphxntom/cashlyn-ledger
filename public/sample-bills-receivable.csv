@@ -1,0 +1,10 @@
+Bills Receivable
+Party Name,Bill Date,Bill Name,Pending Amount,Due Date
+ABC Pvt Ltd,,,,
+,01-04-2026,INV-1,"1,00,000.00 Dr",01-05-2026
+,15-04-2026,INV-2,"50,000.00 Dr",15-05-2026
+,,Sub Total,"1,50,000.00 Dr",
+ABC Private Limited,,,,
+,01-03-2026,INV-9,"25,000.00 Cr",01-04-2026
+,,On Account,"10,000.00 Cr",
+Grand Total,,,"1,15,000.00 Dr",

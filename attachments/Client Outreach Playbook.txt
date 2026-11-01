@@ -1,0 +1,285 @@
+Client Outreach Playbook
+
+The exact process from "stranger" to "discovery call booked"
+
+
+The sequence — LinkedIn first, always
+
+Short answer to "email first or LinkedIn first?": LinkedIn first. Always. Here's why:
+
+
+You don't have their email. Getting a CFO's direct email cold is hard. LinkedIn gives you direct access to the person with zero gatekeepers.
+LinkedIn lets them check you out instantly. When a CFO gets your message, they'll click your profile. If your profile shows O2C expertise and your posts demonstrate knowledge, trust builds before you ever speak. An email is just text from a stranger.
+Response rates are higher. A personalized LinkedIn message to a mid-market CFO in India gets 10–20% response rate. A cold email to the same person gets 2–5%. The math is clear.
+Email comes AFTER the connection is warm. Once they've replied on LinkedIn, you move to email for the formal stuff (scheduling, proposals, documents). Email is your follow-up channel, not your opening channel.
+
+
+The one exception: If you get a warm referral with an email introduction, use email. A CA or mutual connection saying "I'm introducing you to Rajesh, CFO at XYZ" is gold — reply on whatever channel the intro came through.
+
+
+The 5-touch outreach sequence
+
+For each prospect, you execute this sequence over 3–4 weeks. Track every step in your
+Notion CRM. Never skip a step, never jump ahead.
+
+Touch 1 — The LinkedIn connection request (Day 1)
+
+Goal: Get them to accept your connection. Nothing more.
+
+Do NOT pitch in the connection request. The note is 300 characters max, and a sales pitch
+in a connection request is the fastest way to get ignored.
+
+Template:
+
+
+Hi [First Name] — I work in O2C/receivables and noticed we're in similar circles. Would be great to connect. — [Your Name]
+
+
+
+OR (if you have a specific hook):
+
+
+Hi [First Name] — saw [Company] is scaling fast in [sector]. I spend my days in the receivables side of finance and would enjoy connecting. — [Your Name]
+
+
+
+Keep it human, short, low-pressure. You're asking to connect, not asking for a meeting.
+
+Acceptance rate to expect: 30–50% of finance leaders will accept a relevant connection
+request within a week.
+
+
+Touch 2 — The insight message (Day 3–5, after they accept)
+
+Goal: Start a conversation. Get a reply. NOT to pitch or book a call.
+
+This is the most important message in the sequence. It must do three things:
+
+
+Show you know their world (credibility)
+Make a specific, non-obvious observation (value)
+Ask a genuine question (engagement)
+
+
+Template A — The pattern observation:
+
+
+Thanks for connecting, [First Name]. Quick thought — I've been deep in O2C for a while and keep seeing the same thing at companies in [their sector]: 15–25 extra days of DSO that trace back to process gaps, not bad customers. Three causes show up almost every time.
+
+Curious whether that resonates at [Company], or if you've got the receivables side pretty dialed in?
+
+
+
+Template B — The job-posting trigger (use when you've seen them hiring for AR/collections roles):
+
+
+Thanks for connecting, [First Name]. I noticed [Company] is hiring for a collections role — usually a sign the AR portfolio is growing faster than the team. That's a pattern I see a lot in [sector] right now.
+
+Out of curiosity — is the driver volume growth, or is DSO creeping up?
+
+
+
+Template C — The sector-specific insight:
+
+
+Thanks for connecting, [First Name]. Working in [sector] receivables, one thing I keep seeing is that [specific sector insight — e.g., "manufacturing companies lose 10–15 DSO days just from PO mismatches and invoice delivery failures, not from slow-paying customers"].
+
+Does [Company] deal with much of that, or have you automated around it?
+
+
+
+Template D — The mutual connection / referral:
+
+
+Thanks for connecting, [First Name]. [Mutual connection] mentioned you're navigating some receivables challenges at [Company] — that's exactly the world I live in every day.
+
+Would love to hear what you're seeing. Worth a 15-minute chat sometime this week?
+
+
+
+What NOT to write:
+
+
+"I'd love to tell you about our services" (nobody cares about your services)
+"We help companies reduce DSO by 30%" (unearned claim from a stranger)
+"Are you available for a quick call?" (too early — you haven't earned the ask)
+Anything longer than 5–6 sentences (they won't read it)
+Anything copy-pasted without personalization (they can tell instantly)
+
+
+
+Touch 3 — The value drop (Day 8–12, whether or not they replied)
+
+If they replied to Touch 2: Great — you're in a conversation. Respond naturally, ask
+follow-up questions about their situation. When the conversation feels right (usually 2–3
+exchanges), transition to:
+
+
+"This is really common — and usually very fixable. Would it be useful to jump on a 15-minute call? I can share what I've seen work at similar companies. No pitch, just perspective."
+
+
+
+If they didn't reply to Touch 2: Don't repeat your pitch. Send value instead:
+
+
+"[First Name] — came across this and thought of our earlier exchange. [Link to relevant article, stat, or your own LinkedIn post about a topic relevant to their situation]. Thought it might be useful given what [Company] is navigating."
+
+
+
+OR share a specific data point:
+
+
+"[First Name] — quick data point I thought you'd find interesting: companies in [sector] averaging [X] DSO are leaving roughly ₹[Y] crore per ₹100Cr revenue trapped in receivables. It's one of those things that's invisible until someone maps it. Anyway — no agenda, just thought it was relevant to you."
+
+
+
+This touch is about generosity, not selling. You're demonstrating expertise by giving
+something useful. Many prospects who ignored Touch 2 will reply to this.
+
+
+Touch 4 — The direct ask (Day 18–21)
+
+If still no reply: One direct, honest message.
+
+
+"[First Name] — I know you're busy, so I'll keep this short. I help mid-market finance teams find and free cash stuck in overdue receivables. I typically start with a 2-week diagnostic — it maps the entire O2C flow and hands you a report showing exactly where cash is leaking and what it's costing you.
+
+If that's interesting, I'm happy to chat for 15 minutes. If the timing is off, no worries at all — just let me know and I won't ping you again."
+
+
+
+Why this works: It's direct, specific, respects their time, and gives them an easy out
+("just let me know"). The easy out paradoxically makes people MORE likely to respond,
+not less.
+
+
+Touch 5 — The graceful exit (Day 28–30)
+
+If still no reply after all four touches: Leave the door open and move on.
+
+
+"[First Name] — I'll take the hint and stop filling your inbox! If receivables ever become a headache you want an outside eye on, I'm easy to find. Wishing you and the [Company] team well."
+
+
+
+Why send this at all? Two reasons: (1) It's classy, and people remember classy. Some of your best
+clients will come back 3–6 months later saying "I remember you — I should have replied earlier."
+(2) It closes the loop psychologically for you, so you stop wondering and move to the next prospect.
+
+
+After the reply — moving to discovery call
+
+Once a prospect engages (replies with interest, asks a question, says "tell me more"), your
+goal is to get a live conversation. The shift from messaging to call:
+
+
+"Great question — honestly it's easier to dig into this with a quick conversation than over messages. Would [day] at [time] work for a 15-minute chat? I'll send a calendar link."
+
+
+
+Rules for the transition:
+
+
+Suggest a specific day and time (don't say "whenever works for you" — that's vague and dies)
+Say "15 minutes" (low commitment) — the call will go 25–30 minutes naturally
+Send the Calendly link immediately after they agree — don't wait
+If they suggest email instead, send a 2–3 line email that re-asks for the call
+
+
+Once the call is booked: Run the discovery script from the Sales Script document.
+
+
+The multi-channel expansion (after Month 2)
+
+Once you've built some LinkedIn presence and have a few conversations going, add email
+as a parallel channel for prospects you can't reach on LinkedIn:
+
+Finding email addresses
+
+
+LinkedIn profile sometimes shows email (check "Contact info")
+Company website → "About" or "Leadership" page
+Hunter.io (free tier: 25 searches/month) — finds email patterns
+Apollo.io (free tier: limited credits) — contact database
+Simply guess the pattern: firstname@company.com, f.lastname@company.com, firstname.lastname@company.com — then verify with a free tool like NeverBounce
+
+
+Cold email template (only for prospects NOT on LinkedIn)
+
+Subject line: Quick question about [Company]'s receivables
+
+
+Hi [First Name],
+
+I help mid-market finance teams in [sector] find cash trapped in overdue receivables. Most companies I work with discover 15–25 extra DSO days from process gaps that are invisible from the inside.
+
+I ran some rough numbers on [sector] benchmarks, and companies at [Company]'s scale typically have ₹[X] crore sitting past terms that's recoverable with the right process changes.
+
+Would a 15-minute conversation be worth your time to see if that applies to you?
+
+Best,
+[Your Name]
+[Your Consultancy]
+[Phone]
+
+
+
+Follow-up email (Day 4 if no reply):
+
+Subject line: Re: Quick question about [Company]'s receivables
+
+
+[First Name] — bumping this in case it got buried. Happy to work around your schedule if the timing's better in a week or two. Just let me know.
+
+
+
+Final email (Day 10 if no reply):
+
+Subject line: Should I close the loop?
+
+
+[First Name] — I know receivables might not be top of mind right now, and I don't want to clutter your inbox. If the timing isn't right, just reply "not now" and I'll circle back in a few months. If there's interest, I'm here.
+
+
+
+
+Tracking everything (your Notion CRM)
+
+Create a simple database in Notion with these fields:
+
+FieldTypePurposeCompany nameTextThe prospect companyContact nameTextThe person you're reachingTitleTextTheir role (CFO, Controller, etc.)SourceSelectHow you found them (LinkedIn search, referral, job posting, etc.)SectorSelectManufacturing, SaaS, services, distribution, etc.Est. revenueNumberRough company sizeStageSelectNot started → Touch 1 → Touch 2 → Touch 3 → Touch 4 → Touch 5 → Conversation → Discovery booked → Diagnostic proposed → Client → DeadLast touch dateDateWhen you last reached outNext actionTextWhat to do next and whenNotesTextWhat they said, what you learned
+
+Work the pipeline daily. 15 minutes every evening:
+
+
+Send 3–5 new Touch 1s
+Advance everyone who's due for their next touch
+Log every reply and update the stage
+
+
+The math that matters:
+
+
+100 Touch 1s per month → 35–50 accept → 8–15 reply to Touch 2/3 → 3–6 discovery calls → 1–2 diagnostics
+You need to be running 40–60 active prospects at all times to maintain a healthy pipeline
+It takes 6–10 weeks from first touch to first payment. Don't judge results before that.
+
+
+
+Weekly time allocation (while employed at Cvent)
+
+DayActivityTimeMonday eveningSend 5 new connection requests + advance pipeline45 minTuesday eveningWrite and schedule 1 LinkedIn post + send follow-ups45 minWednesday eveningSend 5 new connection requests + advance pipeline45 minThursday eveningWrite and schedule 1 LinkedIn post + any discovery calls45 minFriday eveningPipeline review: update stages, plan next week's outreach30 minSaturday morning1 LinkedIn post + build target list + work on diagnostic template2 hoursSunday morningContent batch-writing for next week + any client delivery work2 hours
+
+Total: ~8–10 hours/week. This is sustainable alongside a full-time job for 3–6 months.
+
+
+The golden rules of outreach
+
+
+Personalize or don't send. A generic message is worse than no message — it marks you as spam in their mind permanently.
+Never pitch in message 1. The connection request earns the right to message. The message earns the right to call. The call earns the right to propose. Respect the sequence.
+Give before you ask. Every touch should leave them smarter or more informed than before, whether or not they hire you.
+Be human. Write like you talk. No corporate jargon, no "I hope this message finds you well," no "I wanted to reach out regarding synergies in your receivables optimization journey."
+Follow up. 80% of sales happen after the 3rd touch. Most people stop after 1. Just by being consistent, you outperform almost everyone.
+Track everything. A prospect who said "not now" in January is a warm lead in April — but only if you wrote down what they said and set a reminder.
+Detach from individual outcomes. Not every prospect will buy. Not every conversation will convert. That's math, not failure. Play the volume game and trust the conversion rate.

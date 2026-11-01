@@ -1,0 +1,361 @@
+O2C Diagnostic Report — Master Template
+
+The deliverable you hand to the CFO after 2 weeks
+
+
+How to use this template
+
+This is your diagnostic report skeleton. For each client, you fill it with THEIR numbers,
+THEIR process, THEIR pain. The structure stays the same; the content is 100% custom.
+A good diagnostic report does three things:
+
+
+Quantifies the problem in rupees — not "your DSO is high" but "₹3.7 crore is stuck beyond terms"
+Shows them WHY — root causes they couldn't see from inside
+Gives a clear, prioritized path out — what to fix first, second, third
+
+
+The report is 12–18 pages. Not a 50-page novel. CFOs don't read long reports — they read
+sharp ones. Every page must earn its place.
+
+
+[CLIENT NAME]
+
+Order-to-Cash Diagnostic Report
+
+Prepared by: [Your Name], [Your Consultancy Name]
+Date: [Date]
+Engagement period: [Start] – [End]
+Confidential — for internal use only
+
+
+Page 1 — Executive Summary (the only page some people will read)
+
+The headline number
+
+
+₹[X.XX] crore in receivables is currently stuck beyond your standard payment terms. This represents [Y]% of your total outstanding AR and approximately [Z] days of trapped working capital.
+
+
+
+What we found (3–5 bullets, no more)
+
+
+[Finding 1: e.g., "62% of invoices past 60 days trace back to three root causes: incorrect billing contacts (28%), unresolved disputes parked without escalation (19%), and missing purchase order references (15%)."]
+[Finding 2: e.g., "Your actual DSO is 68 days against standard terms of 30–45 days. Best Possible DSO (if every customer paid on time) is 38 days — the 30-day gap is process-driven, not customer-driven."]
+[Finding 3: e.g., "The collections team spends ~60% of their time on accounts under ₹2L, which represent only 12% of total overdue value. The top 15 accounts (₹X crore overdue) receive ad-hoc attention."]
+[Finding 4: e.g., "There is no systematic dunning sequence. Follow-up timing, channel, and escalation vary by collector with no standard process."]
+[Finding 5 (if applicable): e.g., "Credit terms have not been reviewed in 3+ years. 40% of customers are on terms that no longer match their payment behavior."]
+
+
+What it's worth to fix
+
+
+Closing even half the DSO gap would free approximately ₹[A] crore in working capital over the next 90–120 days, without changing your revenue or customer base.
+
+
+
+Recommended next step
+
+
+A 90-day implementation engagement to execute the top-priority fixes identified below. Estimated investment: ₹[X]L/month. Estimated return: [multiple]x within the first quarter.
+
+
+
+
+Page 2–3 — Current State: Your O2C Process Map
+
+What this section contains
+
+A visual flowchart of the client's actual invoice-to-cash process, as you observed it.
+Not what their SOP says — what actually happens.
+
+How to build this per client
+
+
+Interview 3–5 people: the billing/invoicing person, 1–2 collectors, the AR manager, and the controller/CFO.
+Walk the actual process: Invoice generation → approval → delivery → customer receipt confirmation → payment follow-up → cash application → reconciliation.
+Mark every handoff, delay point, and decision fork.
+Highlight the gaps between "what should happen" and "what actually happens."
+
+
+Template structure
+
+[INVOICE GENERATED]
+    ↓
+    Who generates? _______________
+    System used? _______________
+    Average time from delivery/service to invoice creation: ___ days
+    ⚠️ Gap identified: [e.g., "3–5 day delay between service delivery and invoicing"]
+    ↓
+[INVOICE APPROVED / REVIEWED]
+    ↓
+    Approval required? Y/N
+    Who approves? _______________
+    Average approval delay: ___ days
+    ⚠️ Gap identified: [e.g., "No approval needed — invoices go out unchecked, leading to errors"]
+    ↓
+[INVOICE DELIVERED TO CUSTOMER]
+    ↓
+    Delivery method: _______________
+    Confirmation of receipt? Y/N
+    Correct contact (AP / decision-maker)? _______________
+    ⚠️ Gap identified: [e.g., "Invoices emailed to generic info@ address — 22% bounce or go unseen"]
+    ↓
+[PAYMENT DUE DATE]
+    ↓
+    Standard terms: _______________
+    Terms vary by customer? Y/N
+    Terms documented / enforced? _______________
+    ↓
+[FIRST FOLLOW-UP]
+    ↓
+    When does first follow-up happen? ___ days after due date
+    Who does it? _______________
+    Channel: _______________
+    ⚠️ Gap identified: [e.g., "First follow-up averages 12 days after due date — no proactive pre-due reminder"]
+    ↓
+[ESCALATION]
+    ↓
+    Escalation trigger: _______________
+    Escalation path: _______________
+    ⚠️ Gap identified: [e.g., "No defined escalation. Collector decides when to involve manager. Some accounts go 90+ days without escalation."]
+    ↓
+[DISPUTE HANDLING]
+    ↓
+    How are disputes logged? _______________
+    Who resolves? _______________
+    Average resolution time: ___ days
+    ⚠️ Gap identified: [e.g., "Disputes tracked in email threads, not in ERP. No visibility into dispute aging."]
+    ↓
+[CASH APPLICATION]
+    ↓
+    Manual or automated? _______________
+    Average time to apply payment: ___ days
+    ⚠️ Gap identified: [e.g., "Payments applied weekly in batch — creates phantom overdue during the gap"]
+    ↓
+[RECONCILIATION]
+
+Visual version: Build a clean flowchart using Mermaid, draw.io, or Figma. Include it as
+an image in the report. Color-code: green = working well, yellow = minor gap, red = major gap.
+
+
+Page 4–5 — AR Aging Analysis
+
+What this section contains
+
+The quantitative deep-dive into their receivables data. This is where your AI leverage shines — Claude + Python can produce this analysis in hours, not weeks.
+
+Data you need from the client
+
+
+AR aging report (Excel/CSV export from their ERP: Tally, SAP, Oracle, Zoho, NetSuite, etc.)
+Fields needed: Customer name, invoice number, invoice date, due date, amount, amount paid, balance, aging bucket, business unit/segment (if available)
+
+
+Analysis to produce
+
+1. Aging waterfall (the headline visual)
+
+BucketAmount (₹)% of Total# of Invoices# of CustomersCurrent (not yet due)1–30 days past due31–60 days past due61–90 days past due91–120 days past due120+ days past dueTotal100%
+
+2. DSO calculation & decomposition
+
+
+Actual DSO: [X] days
+Best Possible DSO (BPDSO): [Y] days (= Current receivables ÷ daily sales)
+Average Days Delinquent (ADD): [X – Y] days (= the gap that's process-driven)
+Dollar value of the gap: ADD × daily revenue = ₹[Z] trapped
+
+
+3. Concentration analysis
+
+
+Top 10 customers by overdue amount (with days delinquent for each)
+What % of total overdue do the top 10/20 represent?
+Are there "chronic late payers" vs. "one-time issues"?
+
+
+4. Root cause segmentation
+
+Categorize every overdue invoice (or a sample of the top 80% by value) into:
+
+Root CauseAmount (₹)% of OverdueAction RequiredDispute / quality issueResolution + process fixWrong billing contactContact update + delivery fixMissing PO / documentationPre-invoice checklistCustomer cash flow issuePayment plan / escalationNo follow-up performedDunning processInvoice not received by customerDelivery channel fixInternal approval delayProcess streamliningUnknown / not yet investigatedImmediate triage
+
+This root-cause table is the most valuable single page in the report. It turns "we have a collections problem" into "here are the 4 specific things causing 80% of your overdue, and here's what to do about each one."
+
+
+Page 6–7 — Benchmarking
+
+What this section contains
+
+Compare their metrics against industry benchmarks. This gives the CFO context — "are we bad, or is everyone bad?"
+
+Template
+
+MetricClient ActualIndustry Median*Top Quartile*GapDSO[X] days[Y] days[Z] days[X–Y] daysADD[X] days[Y] days[Z] days% AR > 90 days[X]%[Y]%[Z]%Bad debt as % of revenue[X]%[Y]%[Z]%Collections FTE per ₹Cr AR[X][Y][Z]Dispute resolution time[X] days[Y] days[Z] days
+
+Benchmark sources: APQC, Hackett Group, CRISIL (for India), industry reports.
+Build your own benchmark library as you do more clients — after 5–10 engagements,
+your cross-client data becomes one of your most valuable assets.
+
+
+Page 8–9 — Key Findings (detailed)
+
+How to structure each finding
+
+For each major finding, use this format:
+
+
+Finding [#]: [One-line description]
+
+What we observed: [2–3 sentences describing the specific issue, with data]
+
+Why it matters: [Quantify the impact in ₹ or days]
+
+Root cause: [Why this is happening — process gap, system limitation, staffing, etc.]
+
+Recommended fix: [Specific action, not generic advice]
+
+Estimated impact: [₹ freed or DSO days reduced]
+
+Effort level: Low / Medium / High
+
+Timeline: Immediate / 30 days / 60 days / 90 days
+
+
+
+Aim for 5–8 findings. More than 8 overwhelms; fewer than 5 feels thin.
+
+
+Page 10 — Quick Wins (do this week)
+
+List 3–5 things the client can implement immediately with zero cost:
+
+Examples (customize per client):
+
+
+"Update billing contacts for your top 20 overdue accounts — our analysis shows 28% of overdue traces to wrong contacts."
+"Send a pre-due-date reminder at Day -7 for all invoices above ₹5L."
+"Move your top 15 overdue accounts (₹X crore) to daily follow-up from the current weekly cycle."
+"Require PO number on all invoices before sending — this eliminates 15% of your dispute volume."
+"Apply cash daily instead of weekly — this removes phantom overdue from your aging report."
+
+
+Why this page matters: It proves immediate value. If the client implements even 2 of these
+and sees results before you even pitch the retainer, the retainer sells itself.
+
+
+Page 11–12 — Recommendation Roadmap
+
+Phase 1: Immediate (Weeks 1–4)
+
+
+[Action items focused on quick wins and process fixes]
+Expected impact: ₹[X]L freed / [Y] days DSO reduction
+
+
+Phase 2: Short-term (Weeks 5–12)
+
+
+[Action items focused on dunning automation, team workflow redesign, escalation paths]
+Expected impact: ₹[X]L freed / [Y] additional days DSO reduction
+
+
+Phase 3: Medium-term (Months 4–6)
+
+
+[Action items focused on system improvements, credit policy review, reporting automation]
+Expected impact: ₹[X]L freed / [Y] additional days DSO reduction
+
+
+Total estimated impact over 6 months
+
+
+₹[Total] crore in freed working capital | [Total] days DSO reduction | [X]% reduction in bad debt write-offs
+
+
+
+
+Page 13 — Proposed Engagement (the soft close)
+
+
+Based on this diagnostic, we recommend a [90-day / 6-month] implementation engagement covering:
+
+
+Dunning process redesign and automation setup
+Collections team workflow optimization and prioritization framework
+Weekly AR review cadence with management reporting
+Credit terms review for top [X] accounts
+Dispute resolution process and tracking implementation
+Monthly progress reporting with DSO and cash-freed metrics
+
+
+Investment: ₹[X]L per month for [Y] months
+Expected ROI: [Multiple]x within the first quarter based on diagnostic findings
+
+This engagement can begin within [X] days of approval.
+
+
+
+
+Appendix — Data tables, methodology notes, detailed aging by customer
+
+Put the heavy data here. The executives won't read it, but the finance team will reference it,
+and it demonstrates rigor.
+
+
+CUSTOMIZATION PRINCIPLES
+
+Principle 1: Lead with THEIR number, not your framework
+
+Every client gets a different "headline number" on page 1. For a manufacturer it might
+be ₹6 crore stuck. For a SaaS company it might be 42 extra DSO days. Find the number
+that will make THIS CFO's eyes widen, and build the entire report around it.
+
+Principle 2: Match the language to the industry
+
+
+Manufacturing: talk about "working capital," "inventory funding," "supplier terms"
+SaaS: talk about "cash runway," "net dollar retention impact," "monthly burn"
+Services: talk about "project-to-cash cycle," "unbilled receivables," "WIP aging"
+Distribution: talk about "inventory turns," "margin compression from float"
+
+
+Principle 3: Calibrate depth to the audience
+
+
+If presenting to the CFO alone: keep it strategic, heavy on ₹ impact, light on process detail
+If presenting to CFO + AR team: balance strategic with operational, include the process map
+If presenting to the AR manager (who will champion it upward): heavy on operational fixes, give them ammunition to sell the retainer to their boss
+
+
+Principle 4: Always include something they didn't expect
+
+The findings they already know ("yes, our DSO is high") build credibility. The one finding
+they DIDN'T know ("40% of your disputes are caused by invoice timing, not invoice accuracy")
+is what closes the deal. Dig for the non-obvious.
+
+Principle 5: Make the quick wins genuinely quick
+
+If your "quick wins" require a 2-week project, they're not quick wins. They should be
+things the client can do THIS WEEK. The faster they see a result, the faster the retainer
+conversation happens.
+
+Principle 6: Price the diagnostic relative to the problem
+
+
+Small company (₹50–100Cr revenue): ₹50,000–75,000
+Mid company (₹100–300Cr revenue): ₹75,000–1,25,000
+Larger mid-market (₹300–500Cr revenue): ₹1,25,000–2,00,000
+
+
+Never price it below ₹50,000. Below that, it signals "not serious" and attracts
+clients who won't pay for the retainer either.
+
+Principle 7: The report is a sales document disguised as a diagnostic
+
+Every page should make the reader think: "We need help implementing this."
+The roadmap should be clear enough that they COULD do it themselves, but detailed
+enough that they realize they probably won't without external help. That tension is
+what converts diagnostics into retainers.
